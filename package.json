@@ -1,0 +1,14 @@
+{
+  "name": "webpack-yarn-vendorize",
+  "license": "GPL-2.0-or-later",
+  "repository": "github:Ambient-Impact/webpack-yarn-vendorize",
+  "main": "./src/vendorize.js",
+  "packageManager": "yarn@3.2.4",
+  "dependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "@symfony/webpack-encore": "^4.1.1",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^4.10.0",
+  }
+}
