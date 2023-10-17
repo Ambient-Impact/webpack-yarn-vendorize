@@ -259,9 +259,9 @@ export class Vendorize {
      */
     const pathParts = path.parse(pathData.module.rawRequest);
 
-    return `${vendorDir}/${pathParts.dir}/${pathParts.name}${pathParts.ext}?v=${
-      packageVersion
-    }`;
+    return `${this.getVendorDirName()}/${pathParts.dir}/${pathParts.name}${
+      pathParts.ext
+    }?v=${packageVersion}`;
   }
 
 }
