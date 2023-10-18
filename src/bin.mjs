@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { default as vendorize } from './index.js';
+import { default as vendorize } from './index.mjs';
 import webpack from 'webpack';
 
 // @see https://webpack.js.org/api/node

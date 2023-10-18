@@ -1,5 +1,5 @@
-import { Config } from './config.js';
-import { Vendorize } from './vendorize.js';
+import { Config } from './config.mjs';
+import { Vendorize } from './vendorize.mjs';
 
 import { createRequire } from 'node:module';
 import { cwd } from 'node:process';
