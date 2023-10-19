@@ -1,8 +1,7 @@
+import { inspect } from 'node:util';
+
 /**
  * Vendorize configuration object.
- *
- * @todo Add parameter validation to setters to throw errors if values aren't
- *   in the expected formats or contain valid values.
  */
 export class Config {
 
@@ -44,7 +43,19 @@ export class Config {
   }
 
   set cleanBefore(cleanBefore) {
+
+    if (typeof cleanBefore !== 'boolean') {
+
+      throw new Error(
+        `The 'cleanBefore' parameter must be a boolean. Got '${
+          typeof cleanBefore
+        }'.`
+      );
+
+    }
+
     this.#cleanBefore = cleanBefore;
+
   }
 
   get cleanBefore() {
@@ -52,7 +63,23 @@ export class Config {
   }
 
   set dirName(dirName) {
+
+    if (typeof dirName !== 'string') {
+
+      throw new Error(
+        `The 'dirName' parameter must be a string. Got '${inspect(dirName)}'.`
+      );
+
+    }
+
+    if (dirName.length === 0) {
+
+      throw new Error(`The 'dirName' parameter cannot be an empty string.`);
+
+    }
+
     this.#dirName = dirName;
+
   }
 
   get dirName() {
@@ -60,7 +87,25 @@ export class Config {
   }
 
   set forPackage(forPackage) {
+
+    if (typeof forPackage !== 'string') {
+
+      throw new Error(
+        `The 'forPackage' parameter must be a string. Got '${
+          inspect(forPackage)
+        }'.`
+      );
+
+    }
+
+    if (forPackage.length === 0) {
+
+      throw new Error(`The 'forPackage' parameter cannot be an empty string.`);
+
+    }
+
     this.#forPackage = forPackage;
+
   }
 
   get forPackage() {
@@ -68,7 +113,17 @@ export class Config {
   }
 
   set packages(packages) {
+
+    if (Array.isArray(packages) === false) {
+
+      throw new Error(
+        `The 'packages' parameter must be an array. Got '${inspect(packages)}'.`
+      );
+
+    }
+
     this.#packages = packages;
+
   }
 
   get packages() {
