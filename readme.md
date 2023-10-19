@@ -33,7 +33,7 @@ Let's say you have `dependency1` and `dependency2` in your `package.json`:
 Then you do a `yarn install` and Yarn does its magic to pull in the packages.
 Now they're in `.yarn/cache` but that's (hopefully) outside of your public web
 root. How do you make those specific dependencies web accessible without
-writing custom code or relying on some kind of bundler like Webpack?
+writing custom code or bundling via something like Webpack?
 
 # How?
 
