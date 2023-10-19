@@ -23,7 +23,7 @@ const pnpIssuer = pnp.findPackageLocator(new URL(
 ).pathname).name;
 
 /**
- * The vendorize class.
+ * The Vendorize class; builds and runs vendorize tasks.
  */
 export class Vendorize {
 
