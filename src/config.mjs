@@ -42,6 +42,14 @@ export class Config {
 
   }
 
+  /**
+   * cleanBefore setter.
+   *
+   * @param {Boolean} cleanBefore
+   *
+   * @throws Error
+   *   If the parameter is not a boolean.
+   */
   set cleanBefore(cleanBefore) {
 
     if (typeof cleanBefore !== 'boolean') {
@@ -58,10 +66,23 @@ export class Config {
 
   }
 
+  /**
+   * cleanBefore getter.
+   *
+   * @return {Boolean}
+   */
   get cleanBefore() {
     return this.#cleanBefore;
   }
 
+  /**
+   * dirName setter.
+   *
+   * @param {String} dirName
+   *
+   * @throws Error
+   *   If the parameter isn't a string or if it's a zero length string.
+   */
   set dirName(dirName) {
 
     if (typeof dirName !== 'string') {
@@ -82,10 +103,23 @@ export class Config {
 
   }
 
+  /**
+   * dirName getter.
+   *
+   * @return {String}
+   */
   get dirName() {
     return this.#dirName;
   }
 
+  /**
+   * forPackage setter.
+   *
+   * @param {String} forPackage
+   *
+   * @throws Error
+   *   If the parameter isn't a string or if it's a zero length string.
+   */
   set forPackage(forPackage) {
 
     if (typeof forPackage !== 'string') {
@@ -108,10 +142,23 @@ export class Config {
 
   }
 
+  /**
+   * forPackage getter.
+   *
+   * @return {String}
+   */
   get forPackage() {
     return this.#forPackage;
   }
 
+  /**
+   * packages setter.
+   *
+   * @param {Array} packages
+   *
+   * @throws Error
+   *   If the parameter isn't an array.
+   */
   set packages(packages) {
 
     if (Array.isArray(packages) === false) {
@@ -126,6 +173,11 @@ export class Config {
 
   }
 
+  /**
+   * packages getter.
+   *
+   * @return {Array}
+   */
   get packages() {
     return this.#packages;
   }
