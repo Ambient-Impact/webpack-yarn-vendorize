@@ -70,17 +70,17 @@ const config = new Config(
 );
 
 if (
-  'dir' in packageJson[packageKey] &&
-  typeof packageJson[packageKey].dir === 'string'
+  'dirName' in packageJson[packageKey] &&
+  typeof packageJson[packageKey].dirName === 'string'
 ) {
-  config.dirName = packageJson[packageKey].dir;
+  config.dirName = packageJson[packageKey].dirName;
 }
 
 if (
-  'clean' in packageJson[packageKey] &&
-  typeof packageJson[packageKey].clean === 'boolean'
+  'cleanBefore' in packageJson[packageKey] &&
+  typeof packageJson[packageKey].cleanBefore === 'boolean'
 ) {
-  config.cleanBefore = packageJson[packageKey].clean;
+  config.cleanBefore = packageJson[packageKey].cleanBefore;
 }
 
 export default new Vendorize(config);
