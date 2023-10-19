@@ -94,3 +94,47 @@ adding it as a `postinstall` script:
 ```
 
 Now you only need to install your package and it'll automagically run Vendorize.
+
+# Advanced
+
+Vendorize can be configured by converting the `vendorize` key in your
+`package.json` into an object with the array of packages to vendorize under a
+`packages` key like so:
+
+```json
+{
+  "name": "my-package",
+  // ...
+  "dependencies": {
+    // ...
+    "dependency1": "^1.0.0",
+    "dependency2": "^1.0.0",
+    // ...
+  },
+  "vendorize": {
+    "packages": [
+      "dependency1",
+      "dependency2"
+    ]
+  }
+}
+```
+
+Then you can specify one or more of the following:
+
+```json
+{
+  // ...
+  "vendorize": {
+    "packages": [
+      "dependency1",
+      "dependency2"
+    ],
+    // If true (the default), will delete the contents of the vendor directory
+    // before copying files into it.
+    "cleanBefore": true,
+    // Don't like the name "vendor"? Weird, but you can change it, sure.
+    "dirName": "vendor"
+  }
+}
+```
