@@ -16,7 +16,7 @@ ecosystem of plug-ins.
 
 Let's say you have `dependency1` and `dependency2` in your `package.json`:
 
-```json
+```javascript
 {
   "name": "my-package",
   // ...
@@ -44,7 +44,7 @@ yarn add 'webpack-yarn-vendorize@github:Ambient-Impact/webpack-yarn-vendorize' -
 Next, you need to define the subset of dependencies you want vendorized by
 adding a `"vendorize"` entry to your `package.json`:
 
-```json
+```javascript
 {
   "name": "my-package",
   // ...
@@ -80,7 +80,7 @@ my-package
 You can also automate this so you don't need to run the command yourself by
 adding it as a `postinstall` script:
 
-```json
+```javascript
 {
   "name": "my-package",
   // ...
@@ -101,7 +101,7 @@ Vendorize can be configured by converting the `vendorize` key in your
 `package.json` into an object with the array of packages to vendorize under a
 `packages` key like so:
 
-```json
+```javascript
 {
   "name": "my-package",
   // ...
@@ -122,7 +122,7 @@ Vendorize can be configured by converting the `vendorize` key in your
 
 Then you can specify one or more of the following:
 
-```json
+```javascript
 {
   // ...
   "vendorize": {
