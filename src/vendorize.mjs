@@ -12,11 +12,15 @@ const { default: pnp } = await import('pnpapi');
  *
  * @type {String}
  *
- * @see https://yarnpkg.com/advanced/pnpapi#resolvetounqualified
+ * @see https://nodejs.org/api/esm.html#importmetaurl
  *
- * @todo Can we automagically fetch this from Yarn or our package.json?
+ * @see https://yarnpkg.com/advanced/pnpapi#findpackagelocator
+ *
+ * @see https://yarnpkg.com/advanced/pnpapi#resolvetounqualified
  */
-const pnpIssuer = 'webpack-yarn-vendorize';
+const pnpIssuer = pnp.findPackageLocator(new URL(
+  import.meta.url
+).pathname).name;
 
 /**
  * The vendorize class.
