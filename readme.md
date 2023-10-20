@@ -1,5 +1,7 @@
-Copy front-end assets from [Yarn](https://yarnpkg.com/)'s virtual filesystem to
-a publicly accessible vendor directory.
+Copy front-end assets from a
+[Plug'n'Play](https://yarnpkg.com/features/pnp)-compliant package manager such
+as [Yarn](https://yarnpkg.com/) or [pnpm](https://pnpm.io/) into a publicly
+accessible vendor directory.
 
 # Why?
 
@@ -30,15 +32,23 @@ Let's say you have `dependency1` and `dependency2` in your `package.json`:
 
 ```
 
-Then you do a `yarn install` and Yarn does its magic to pull in the packages.
-Now they're in `.yarn/cache` but that's (hopefully) outside of your public web
-root. How do you make those specific dependencies web accessible without
-writing custom code or bundling via something like Webpack?
+Then you do a [`yarn install`](https://yarnpkg.com/cli/install) or
+[`pnpm install`](https://pnpm.io/cli/install) and your package manager does its
+magic to pull in the packages. Now they're in `.yarn/cache` or `node_modules`
+but that's (hopefully) outside of your public web root. How do you make those
+specific dependencies web accessible without writing custom code or bundling
+via something like Webpack?
 
 # How?
 
 ```bash
 yarn add 'webpack-yarn-vendorize@github:Ambient-Impact/webpack-yarn-vendorize' --dev
+```
+
+or
+
+```bash
+pnpm add 'webpack-yarn-vendorize@github:Ambient-Impact/webpack-yarn-vendorize' --dev
 ```
 
 Next, you need to define the subset of dependencies you want vendorized by
@@ -65,8 +75,8 @@ Note that you must explicitly declare a package as a dependency. If you don't,
 Vendorize will throw an error - even if the package has been installed by Yarn
 from another workspace in the same project.
 
-Now you can run `yarn run vendorize` and once it's completed, you'll find a
-`vendor` directory inside your package like so:
+Now you can run `yarn run vendorize` or `pnpm run vendorize` and once it's
+completed, you'll find a `vendor` directory inside your package like so:
 
 ```
 my-package
@@ -92,6 +102,8 @@ adding it as a `postinstall` script:
   // ...
 }
 ```
+
+If using pnpm, replace `yarn run vendorize` with `pnpm run vendorize` above.
 
 Now you only need to install your package and it'll automagically run Vendorize.
 
