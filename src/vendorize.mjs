@@ -70,10 +70,10 @@ export class Vendorize {
   }
 
   /**
-   * Get a package's version from Yarn if possible.
+   * Get a package's version from the PnP API if possible.
    *
    * @param {PackageLocator} packageLocator
-   *   The Yarn package locator for the package.
+   *   The PnP package locator for the package.
    *
    * @return {String|null}
    *   The package version or null if it couldn't be found.
@@ -87,8 +87,8 @@ export class Vendorize {
    *
    * @see https://nodejs.org/api/module.html#modulecreaterequirefilename
    *   We use this to require the package.json of the package as itself, which
-   *   avoids Yarn throwing an error if the package is not directly required by
-   *   the current one.
+   *   avoids the PnP API throwing an error if the package is not directly
+   *   required by the current one.
    *
    * @see https://www.npmjs.com/package/semver#coercion
    *   Alternatively, we could use the semver package to coerce the version
@@ -97,7 +97,7 @@ export class Vendorize {
   #getPackageVersion(packageLocator) {
 
     /**
-     * Yarn package information for the given package.
+     * PnP package information for the given package.
      *
      * @type {PackageInformation}
      */
@@ -124,9 +124,9 @@ export class Vendorize {
    * Get the configuration array to pass to Encore.copyFiles().
    *
    * @return {Object[]}
-   *   Array of objects with 'from' and 'to' keys defining the Yarn virtual
-   *   filesystem paths and their corresponding output paths under the vendor
-   *   directory to be copied to.
+   *   Array of objects with 'from' and 'to' keys defining the source paths and
+   *   their corresponding output paths under the vendor directory to be copied
+   *   to.
    *
    * @see https://github.com/symfony/webpack-encore/blob/main/index.js
    *   Documents the API.

@@ -43,7 +43,7 @@ if (typeof packageLocator === 'null') {
 }
 
 /**
- * Yarn package information for the calling package.
+ * PnP package information for the calling package.
  *
  * @type {PackageInformation}
  */
