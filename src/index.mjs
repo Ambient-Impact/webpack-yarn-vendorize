@@ -2,7 +2,17 @@ import { Config } from './config.mjs';
 import { Vendorize } from './vendorize.mjs';
 
 import { createRequire } from 'node:module';
-import { cwd } from 'node:process';
+import * as process from 'node:process';
+
+// @see https://yarnpkg.com/advanced/pnpapi#processversionspnp
+if (!('pnp' in process.versions)) {
+
+  throw new Error(
+    `Vendorize requires the Plug'n'Play (PnP) API.`
+  );
+
+}
+
 // Note that at the time of writing the 'pnpapi' built-in module is CommonJS, so
 // it must be import()ed and destructured like so to behave similarly to ESM
 // imports.
@@ -22,7 +32,7 @@ const packageKey = 'vendorize';
  *
  * @see https://yarnpkg.com/advanced/pnpapi#findpackagelocator
  */
-const packageLocator = pnp.findPackageLocator(cwd());
+const packageLocator = pnp.findPackageLocator(process.cwd());
 
 if (typeof packageLocator === 'null') {
 
