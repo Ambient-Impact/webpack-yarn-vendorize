@@ -162,6 +162,20 @@ export class Vendorize {
 
     }
 
+    if (this.#config.gitIgnore === true) {
+
+      // Encore.copyFiles() is not the most elegant solution for this but it
+      // works for now.
+      copyConfig.push({
+        from: path.join(pnp.resolveToUnqualified(
+          pnpIssuer, pnpIssuer
+        ), 'files'),
+        pattern: /gitignore/,
+        to: `.gitignore`
+      });
+
+    }
+
     return copyConfig;
 
   }
@@ -193,7 +207,11 @@ export class Vendorize {
 
     // Delete any previous vendor directory contents.
     if (this.#config.cleanBefore === true) {
-      Encore.cleanupOutputBeforeBuild([`${this.getVendorPath()}/**`]);
+      Encore.cleanupOutputBeforeBuild([
+        `${this.getVendorPath()}/**`,
+        // Don't delete the .gitignore in case it's been customized.
+        `!${this.getVendorDirName()}/.gitignore`,
+      ]);
     }
 
     return Encore;

@@ -35,6 +35,13 @@ export class Config {
    */
   #cleanBefore = true;
 
+  /**
+   * Whether to generate a .gitignore in the vendor direcory to ignore contents.
+   *
+   * @type {Boolean}
+   */
+  #gitIgnore = true;
+
   constructor(forPackage, packages) {
 
     this.forPackage = forPackage;
@@ -149,6 +156,39 @@ export class Config {
    */
   get forPackage() {
     return this.#forPackage;
+  }
+
+  /**
+   * gitIgnore setter.
+   *
+   * @param {Boolean} gitIgnore
+   *
+   * @throws Error
+   *   If the parameter is not a boolean.
+   */
+  set gitIgnore(gitIgnore) {
+
+    if (typeof gitIgnore !== 'boolean') {
+
+      throw new Error(
+        `The 'gitIgnore' parameter must be a boolean. Got '${
+          typeof gitIgnore
+        }'.`
+      );
+
+    }
+
+    this.#gitIgnore = gitIgnore;
+
+  }
+
+  /**
+   * gitIgnore getter.
+   *
+   * @return {Boolean}
+   */
+  get gitIgnore() {
+    return this.#gitIgnore;
   }
 
   /**

@@ -146,7 +146,10 @@ Then you can specify one or more of the following:
     // before copying files into it.
     "cleanBefore": true,
     // Don't like the name "vendor"? Weird, but you can change it, sure.
-    "dirName": "vendor"
+    "dirName": "vendor",
+    // If true (the default), a .gitignore file will be placed in the vendor
+    // directory to ignore its contents.
+    "gitIgnore": true
   }
 }
 ```

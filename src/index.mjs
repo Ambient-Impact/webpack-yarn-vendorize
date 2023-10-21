@@ -93,4 +93,8 @@ if (
   config.cleanBefore = packageJson[packageKey].cleanBefore;
 }
 
+if ('gitIgnore' in packageJson[packageKey]) {
+  config.gitIgnore = packageJson[packageKey].gitIgnore;
+}
+
 export default new Vendorize(config);
