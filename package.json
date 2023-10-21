@@ -1,7 +1,7 @@
 {
-  "name": "webpack-yarn-vendorize",
+  "name": "pnp-vendorize",
   "license": "GPL-2.0-or-later",
-  "repository": "github:Ambient-Impact/webpack-yarn-vendorize",
+  "repository": "github:Ambient-Impact/pnp-vendorize",
   "type": "module",
   "main": "./src/index.mjs",
   "exports": "./src/index.mjs",
