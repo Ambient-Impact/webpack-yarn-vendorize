@@ -150,3 +150,9 @@ Then you can specify one or more of the following:
   }
 }
 ```
+
+# Miscellaneous
+
+Not to be confused with [the `vendorize`
+package](https://www.npmjs.com/package/vendorize), which only copies npm
+packages from a `node_modules` directory.
