@@ -79,17 +79,11 @@ const config = new Config(
     packageJson[packageKey] : packageJson[packageKey].packages
 );
 
-if (
-  'dirName' in packageJson[packageKey] &&
-  typeof packageJson[packageKey].dirName === 'string'
-) {
+if ('dirName' in packageJson[packageKey]) {
   config.dirName = packageJson[packageKey].dirName;
 }
 
-if (
-  'cleanBefore' in packageJson[packageKey] &&
-  typeof packageJson[packageKey].cleanBefore === 'boolean'
-) {
+if ('cleanBefore' in packageJson[packageKey]) {
   config.cleanBefore = packageJson[packageKey].cleanBefore;
 }
 
