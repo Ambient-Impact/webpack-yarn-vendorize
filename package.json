@@ -8,7 +8,6 @@
   "bin": {
     "vendorize": "./src/bin.mjs"
   },
-  "packageManager": "yarn@3.x",
   "dependencies": {
     "@babel/core": "^7.20.2",
     "@babel/preset-env": "^7.20.2",
