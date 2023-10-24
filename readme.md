@@ -5,14 +5,20 @@ accessible vendor directory.
 
 # Why?
 
+By design, package managers like Yarn when using the Plug'n'Play installation
+strategy optimize for speed and portability of packages, but in order to
+actually make select vendor libraries web-accessible you have to either use
+something like [Webpack](https://webpack.js.org/) to extract and bundle them,
+or figure out the API yourself and hack together a solution.
+
 If you're coming from the PHP world where [the Composer package
 manager](https://getcomposer.org/) is the de facto standard in managing
 dependencies, and you're working with a content management system (CMS) like
 [Drupal](https://www.drupal.org/) that has its own framework for defining
 libraries, handling dependency trees, and bundling them as needed for a given
-route, then you might not want [Webpack](https://webpack.js.org/) to bundle
-your vendor libraries yet still make use of Webpack's other features and
-ecosystem of plug-ins.
+route, then this package is for you. It's intended as a drop-in solution to make
+your front-end package manager behave a bit more like Composer for certain
+packages.
 
 # What?
 
