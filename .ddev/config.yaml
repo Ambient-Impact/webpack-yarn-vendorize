@@ -1,0 +1,21 @@
+# Bare DDEV configuration for the use of NPM.
+#
+# @see https://ddev.readthedocs.io/en/stable/users/configuration/config/
+
+name: pnp-vendorize
+# This is the most generic DDEV project type. A Node.js one does not yet exist.
+#
+# @see https://github.com/ddev/ddev/issues/4854
+type: php
+docroot: ""
+php_version: "8.1"
+additional_fqdns: []
+additional_hostnames: []
+composer_version: "2"
+nodejs_version: "20"
+# Don't automatically load the 'db' container as we don't need a database.
+omit_containers: ["db"]
+use_dns_when_possible: true
+web_environment: []
+webserver_type: nginx-fpm
+xdebug_enabled: false
