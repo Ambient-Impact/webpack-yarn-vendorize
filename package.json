@@ -1,7 +1,11 @@
 {
   "name": "@consensus.enterprises/pnp-vendorize",
+  "version": "1.0.0",
   "license": "GPL-2.0-or-later",
-  "repository": "gitlab:consensus.enterprises/misc/pnp-vendorize",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/consensus.enterprises/misc/pnp-vendorize.git"
+  },
   "homepage": "https://gitlab.com/consensus.enterprises/misc/pnp-vendorize",
   "bugs": "https://gitlab.com/consensus.enterprises/misc/pnp-vendorize/-/issues",
   "type": "module",
@@ -14,7 +18,7 @@
     "license.md"
   ],
   "bin": {
-    "vendorize": "./src/bin.mjs"
+    "vendorize": "src/bin.mjs"
   },
   "dependencies": {
     "@babel/core": "^7.20.2",
