@@ -7,6 +7,12 @@
   "type": "module",
   "main": "./src/index.mjs",
   "exports": "./src/index.mjs",
+  "files": [
+    "files/**",
+    "src/**",
+    "readme.md",
+    "license.md"
+  ],
   "bin": {
     "vendorize": "./src/bin.mjs"
   },
