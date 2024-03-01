@@ -48,13 +48,13 @@ via something like Webpack?
 # How?
 
 ```bash
-yarn add 'pnp-vendorize@github:Ambient-Impact/pnp-vendorize' --dev
+yarn add '@consensus.enterprises/pnp-vendorize' --dev
 ```
 
 or
 
 ```bash
-pnpm add 'pnp-vendorize@github:Ambient-Impact/pnp-vendorize' --dev
+pnpm add '@consensus.enterprises/pnp-vendorize' --dev
 ```
 
 Next, you need to define the subset of dependencies you want vendorized by

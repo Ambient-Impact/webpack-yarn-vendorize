@@ -1,9 +1,9 @@
 {
-  "name": "pnp-vendorize",
+  "name": "@consensus.enterprises/pnp-vendorize",
   "license": "GPL-2.0-or-later",
-  "repository": "github:Ambient-Impact/pnp-vendorize",
-  "homepage": "https://github.com/Ambient-Impact/pnp-vendorize",
-  "bugs": "https://github.com/Ambient-Impact/pnp-vendorize/issues",
+  "repository": "gitlab:consensus.enterprises/misc/pnp-vendorize",
+  "homepage": "https://gitlab.com/consensus.enterprises/misc/pnp-vendorize",
+  "bugs": "https://gitlab.com/consensus.enterprises/misc/pnp-vendorize/-/issues",
   "type": "module",
   "main": "./src/index.mjs",
   "exports": "./src/index.mjs",
