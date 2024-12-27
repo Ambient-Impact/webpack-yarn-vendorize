@@ -1,3 +1,7 @@
+⚠️ This project has moved to [`@neurocracy/pnp-vendorize`](https://gitlab.com/neurocracy/front-end/pnp-vendorize); all development continues there.
+
+----
+
 Copy front-end assets from a
 [Plug'n'Play](https://yarnpkg.com/features/pnp)-compliant package manager such
 as [Yarn](https://yarnpkg.com/) or [pnpm](https://pnpm.io/) into a publicly
